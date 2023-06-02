@@ -56,45 +56,47 @@ const BibleTextFetcher = ({ setHistory }) => {
     setChapter('27');
   };
 
-  return (
-    <>
-      <form className="form" onSubmit={handleSubmit}>
-        <select value={book} onChange={(e) => setBook(e.target.value)}>
-          <option value="">Select a book</option>
-          {titles.map((title) => (
-            <option key={title} value={title}>
-              {title}
-            </option>
-          ))}
-        </select>
-        <input
-          type="text"
-          placeholder="Chapter"
-          value={chapter}
-          onChange={(e) => setChapter(e.target.value)}
-        />
-        <div className="buttons">
-          <button type="submit">Fetch Text</button>
-          <button type="button" onClick={generateExample}>
-            Generate Example
-          </button>
+// ... rest of the code
+
+return (
+  <>
+    <form className="form" onSubmit={handleSubmit}>
+      <select className="select" value={book} onChange={(e) => setBook(e.target.value)}>
+        <option value="">Select a book</option>
+        {titles.map((title) => (
+          <option key={title} value={title}>
+            {title}
+          </option>
+        ))}
+      </select>
+      <input
+        className="input"
+        type="number" // change type to number to accept only numbers
+        min="1" // add a minimum limit if needed
+        placeholder="Chapter"
+        value={chapter}
+        onChange={(e) => setChapter(e.target.value)}
+      />
+      <button className="button button-fetch" type="submit">Fetch Text</button>
+    </form>
+    <button className="button button-example" type="button" onClick={generateExample}>Generate Example</button>
+    {loading ? (
+      <p>Loading...</p>
+    ) : error ? (
+      <p>Error: {error}</p>
+    ) : passageData ? (
+      <div>
+        <PassageComponent passageData={passageData} />
+        <div className="text">
+          <h2>Raw JSON:</h2>
+          <textarea value={rawJson} readOnly />
         </div>
-      </form>
-      {loading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>Error: {error}</p>
-      ) : passageData ? (
-        <div>
-          <PassageComponent passageData={passageData} />
-          <div className="text">
-            <h2>Raw JSON:</h2>
-            <textarea value={rawJson} readOnly />
-          </div>
-        </div>
-      ) : null}
-    </>
-  );
-};
+      </div>
+    ) : null}
+  </>
+);
+
+
+}
 
 export default BibleTextFetcher;

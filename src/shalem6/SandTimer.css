@@ -1,0 +1,15 @@
+/* SandTimer.module.css */
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  animation-name: bubble-animation;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bubble-animation {
+  from {transform: translateY(0);}
+  to {transform: translateY(-100vh);}
+}

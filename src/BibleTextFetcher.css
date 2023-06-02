@@ -13,30 +13,44 @@
     padding: 10px;
   }
 }
-
+/* ... rest of the code */
 
 .form {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: column; /* change to column to stack elements vertically */
+  gap: 20px; /* increase gap for more clarity */
   margin-bottom: 20px;
 }
 
 .select,
 .input {
-  padding: 5px;
-  font-size: 16px;
+  padding: 10px; /* increase padding for more visibility */
+  font-size: 18px; /* increase font size for more visibility */
   border-radius: 3px;
+  width: 100%; /* make select and input fill the width of the form */
 }
 
 .button {
-  padding: 8px 16px;
-  font-size: 16px;
+  padding: 10px 20px; /* increase padding for more visibility */
+  font-size: 18px; /* increase font size for more visibility */
   border-radius: 3px;
   color: white;
   border: none;
   cursor: pointer;
+  margin-bottom: 20px; /* add margin for separation */
 }
+
+.button-fetch {
+  background-color: #4caf50;
+}
+
+.button-example {
+  background-color: #FFA500;
+}
+
+/* ... rest of the code */
+
+
 
 .button-en {
   background-color: #4caf50;

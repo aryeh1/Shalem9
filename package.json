@@ -14,7 +14,9 @@
   "dependencies": {
     "@replit/database": "^2.0.4",
     "dompurify": "^3.0.3",
+    "dotenv": "^16.0.3",
     "prop-types": "^15.8.1",
+    "react-worker": "^1.0.0",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {

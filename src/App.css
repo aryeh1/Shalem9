@@ -1,56 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
+/* Base Element Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #1d3557;
+  background: #f1faee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Common Styles */
+.credit, .clock {
+  font-size: 14px;
+}
+
+.special-effect {
+  font-size: 15px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }
 
 .app {
   text-align: center;
-  background: linear-gradient(135deg, #f1faee, #a8dadc);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #1d3557;
 }
 
 .title {
-  font-size: 4em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 30px;
-  animation: glow 2s ease-in-out infinite;
+  font-size: 3em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
 }
 
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 30px;
-}
-
-.form input {
-  margin: 10px;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid #457b9d;
-  background-color: transparent;
-  color: #1d3557;
-  font-size: 16px;
-  outline: none;
-  transition: all 0.3s ease-out;
-}
-
-.form input:focus {
-  border-color: #e63946;
-  box-shadow: 0 0 5px #e63946;
-}
-
-.form button {
+/* Button Styles */
+.button {
   padding: 12px 24px;
   margin: 10px;
-  background: #e63946;
+  background: #864174;
   border-radius: 20px;
   border: none;
   color: #fff;
@@ -59,24 +49,67 @@ body {
   transition: all 0.3s ease-out;
 }
 
-.form button:hover {
+.button:hover {
   background-color: #ff6f69;
   transform: scale(1.1);
 }
 
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px;
+}
+
+.form input, .form button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease-out;
+}
+
+.form input {
+  border: none;
+  border-bottom: 2px solid #457b9d;
+  background-color: transparent;
+  color: #1d3557;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 5px #e63946;
+}
+
+.form button {
+  background: #1d3557;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #e63946;
+  transform: scale(1.1);
+}
+
+/* Menu Styles */
 .menu {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   list-style-type: none;
   padding: 10px;
-  background-color: #f1faee;
+  background-color: #f5f7f5;
   border-radius: 4px;
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
 }
 
 .menu li {
-  padding: 10px 20px;
+  padding: 10px 16px;
   background-color: #457b9d;
   border-radius: 20px;
   color: #fff;
@@ -84,12 +117,12 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
 .menu li.active {
   background-color: #1d3557;
   transform: scale(1.1);
 }
 
+/* Content Styles */
 .content {
   margin: 30px;
   animation: fadeIn 2s;
@@ -118,22 +151,6 @@ body {
   padding: 0 20px;
 }
 
-.special-effect {
-  display: inline-block;
-  font-size: 15px;
-  color: #2b228a;
-}
-
-.credit {
-  color: #457b9d;
-  font-size: 14px;
-}
-
-.clock {
-  color: #457b9d;
-  font-size: 16px;
-}
-
 .expanded-text {
   overflow: auto;
   max-height: 200px;
@@ -146,13 +163,10 @@ body {
   overflow: hidden;
 }
 
+/* Animations */
 @keyframes glow {
-  0% {
+  0%, 100% {
     text-shadow: 0 0 10px #00ffff, 0 0 20px #e63946, 0 0 30px #e63946, 0 0 40px #e63946;
-  }
-  
-  100% {
-    text-shadow: 0 0 20px #e63946, 0 0 30px #e63946, 0 0 40px #e63946, 0 0 50px #00ffff, 0 0 60px #e63946;
   }
 }
 
@@ -166,22 +180,23 @@ body {
   }
 }
 
+/* Media Queries */
 @media screen and (max-width: 600px) {
   .title {
-    font-size: 3em;
+    font-size: 2em;
   }
-  
+
   .form {
     margin: 20px;
   }
-  
+
   .form input,
   .form button {
     margin: 5px;
     padding: 8px;
     font-size: 14px;
   }
-  
+
   .text {
     font-size: 16px;
   }
